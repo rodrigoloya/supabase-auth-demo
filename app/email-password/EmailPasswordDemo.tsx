@@ -1,4 +1,5 @@
 "use client";
+import { getSupabaseBrowserClient } from "@/api/supabase/browser-client";
 import { User } from "@supabase/supabase-js";
 import { useState } from "react";
 
@@ -13,12 +14,38 @@ export default function EmailPasswordDemo({ user }: EmailPasswordDemoProps) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
-    
+
+    const supabase = getSupabaseBrowserClient();
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setStatus("");
+        if (mode === "signup") {
+            setStatus("Creating account...");
+            const { error } = await supabase.auth.signUp({ email, password });
+            if(error) {
+            setStatus(error.message);
+            } else {
+                setStatus("Success! Check your email for a magic link.");
+            }   
+        } else {
+            setStatus("Signing in...");
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if(error) {
+                setStatus(error.message);
+            } else {
+                setStatus("Success! You are signed in.");
+            }
+        } 
+           
+    }
+
     return (
+        <>
         <form
             className="relative overflow-hidden rounded-[32px] border border-emerald-500/30 bg-gradient-to-br from-[#05130d] via-[#04100c] to-[#0c2a21] p-8 text-slate-100 shadow-[0_35px_90px_rgba(2,6,23,0.65)]"
-            
-          >
+            onSubmit = {handleSubmit}
+            >
             <div
               className="pointer-events-none absolute -left-4 -top-4 -z-10 h-20 w-28 rounded-full bg-[radial-gradient(circle,_rgba(16,185,129,0.25),_transparent)] blur-lg"
               aria-hidden="true"
@@ -94,5 +121,11 @@ export default function EmailPasswordDemo({ user }: EmailPasswordDemoProps) {
               </p>
             )}
           </form>
+          {status && (
+              <p className="mt-4 text-sm text-slate-300" role="status" aria-live="polite">
+                {status}
+              </p>
+            )}
+        </>
     );
 }
