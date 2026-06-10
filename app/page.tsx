@@ -71,7 +71,7 @@ const demos = [
   },
   {
     href: "/twitter-login",
-    title: "Twitter Login",
+    title: "X Login (Twitter)",
     description: "Demonstrate social login via signInWithOAuth plus the automatic UI sync powered by onAuthStateChange.",
     highlights: ["Redirect URLs", "Call signInWithOAuth", "Watch session update"],
     theme: {

@@ -80,7 +80,7 @@ export default function TwitterLoginDemo({ user }: TwitterLoginDemoProps) {
                        OAuth
                      </p>
                      <h3 className="text-xl font-semibold text-white">
-                       Continue with Twitter
+                       Continue with X 
                      </h3>
                    </div>
                  </div>
@@ -96,7 +96,7 @@ export default function TwitterLoginDemo({ user }: TwitterLoginDemoProps) {
                  onClick={handleTwitterSignIn}
                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1a73e8] px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/40 transition hover:bg-[#1662c4]"
                >
-                 Continue with Twitter
+                 Continue with X (Twitter)
                </button>
              </section>
            </>
