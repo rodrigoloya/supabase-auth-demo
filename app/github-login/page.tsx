@@ -1,15 +1,14 @@
-import FacebookLoginPageDemo from "./FacebookLoginDemo";
+import GithubLoginDemo from "./GithubLoginDemo";
 import { createServerSupabaseServerClient } from "@/api/supabase/server-client";
 
 
-export default async function FacebookLoginPage() {
+export default async function GithubLoginPage() {
     const supabase = await createServerSupabaseServerClient();
     const { data: { user } } = await supabase.auth.getUser();
 
-    console.log({ user });
-
+    console.log({ user })
+    
     return (
-       <FacebookLoginPageDemo user={user} />
-
+       <GithubLoginDemo user={user} />  
     );
 }

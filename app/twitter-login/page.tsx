@@ -1,15 +1,13 @@
-import FacebookLoginPageDemo from "./FacebookLoginDemo";
+import TwitterLoginPageDemo from "./TwitterLoginDemo";
 import { createServerSupabaseServerClient } from "@/api/supabase/server-client";
 
-
-export default async function FacebookLoginPage() {
+export default async function TwitterLoginPage() {
     const supabase = await createServerSupabaseServerClient();
     const { data: { user } } = await supabase.auth.getUser();
 
-    console.log({ user });
+    console.log({ user })
 
     return (
-       <FacebookLoginPageDemo user={user} />
-
+        <TwitterLoginPageDemo user={user} />
     );
 }

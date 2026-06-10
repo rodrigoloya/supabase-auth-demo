@@ -52,6 +52,40 @@ const demos = [
       ],
     },
   },
+  {
+    href: "/github-login",
+    title: "GitHub Login",
+    description: "Demonstrate social login via signInWithOAuth plus the automatic UI sync powered by onAuthStateChange.",
+    highlights: ["Redirect URLs", "Call signInWithOAuth", "Watch session update"],
+    theme: {
+      card:
+        "border border-[#5a8d11]/30 bg-gradient-to-br from-[#363266] via-[#07122e] to-[#0f2311] shadow-[0_30px_70px_rgba(2,16,23,0.65)] hover:border-[#7fb011]/60",
+      open: "text-[#8ab411]",
+      title: "text-[#bcd711]",
+      bullets: "text-[#9fc111]",
+      overlays: [
+        "pointer-events-none absolute -right-8 -top-6 -z-10 h-16 w-16 rounded-full bg-[radial-gradient(circle,_rgba(66,233,244,0.3),_rgba(234,167,53,0.06))] blur-lg",
+        "pointer-events-none absolute bottom-4 left-6 -z-10 h-12 w-32 rounded-full bg-[linear-gradient(120deg,_rgba(251,288,5,0.18),_rgba(66,233,244,0.12))] blur-lg",
+      ],
+    },
+  },
+  {
+    href: "/twitter-login",
+    title: "Twitter Login",
+    description: "Demonstrate social login via signInWithOAuth plus the automatic UI sync powered by onAuthStateChange.",
+    highlights: ["Redirect URLs", "Call signInWithOAuth", "Watch session update"],
+    theme: {
+      card:
+        "border border-[#5a8d11]/30 bg-gradient-to-br from-[#363266] via-[#07122e] to-[#0f2311] shadow-[0_30px_70px_rgba(2,16,23,0.65)] hover:border-[#7fb011]/60",
+      open: "text-[#8ab411]",
+      title: "text-[#bcd711]",
+      bullets: "text-[#9fc111]",
+      overlays: [
+        "pointer-events-none absolute -right-8 -top-6 -z-10 h-16 w-16 rounded-full bg-[radial-gradient(circle,_rgba(66,233,244,0.3),_rgba(234,167,53,0.06))] blur-lg",
+        "pointer-events-none absolute bottom-4 left-6 -z-10 h-12 w-32 rounded-full bg-[linear-gradient(120deg,_rgba(251,288,5,0.18),_rgba(66,233,244,0.12))] blur-lg",
+      ],
+    },
+  },
 ] as const;
 
 export default function Home() {
