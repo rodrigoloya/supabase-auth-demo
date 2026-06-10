@@ -73,7 +73,7 @@ export default function TwitterLoginDemo({ user }: TwitterLoginDemoProps) {
                <div className="flex items-center justify-between">
                  <div className="flex items-center gap-3">
                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0d1f3f] text-2xl font-semibold text-white shadow-lg shadow-blue-900/40 ring-2 ring-[#8ab4ff]/40">
-                     T
+                     X
                    </span>
                    <div>
                      <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
